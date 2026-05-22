@@ -61,17 +61,6 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-          {site.badges.map((badge) => (
-            <span
-              key={badge}
-              className="rounded-full border-2 border-gold bg-gold/10 px-5 py-2 text-xs font-semibold tracking-[0.15em] text-white uppercase"
-            >
-              {badge}
-            </span>
-          ))}
-        </div>
-
         <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-gold/20 pt-8 text-xs text-white/70 sm:flex-row">
           <p className="text-white/90">
             © {new Date().getFullYear()}{" "}

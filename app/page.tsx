@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      {/* Hero — Dribbble split layout */}
+      {/* Hero split layout */}
       <section className="surface-texture border-b-2 border-gold/25">
         <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 lg:grid-cols-2 lg:items-end lg:py-28">
           <div>
@@ -60,7 +60,7 @@ export default function Home() {
           <div className="relative aspect-[3/1] w-full overflow-hidden rounded-2xl border-2 border-gold/40 bg-black gold-glow">
             <Image
               src={images.hero}
-              alt="Aurelian Surfaces — concrete sealing, interlock sealing, and oil stain treatment"
+              alt="Aurelian Surfaces: concrete sealing, interlock sealing, and oil stain treatment"
               fill
               priority
               quality={imageQuality.hero}
@@ -73,7 +73,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Highlights — gold checkmarks */}
+      {/* Highlights */}
       <section className="section-gold">
         <div className="mx-auto max-w-6xl px-6 py-16">
           <ul className="flex flex-col items-center justify-center gap-6 sm:flex-row sm:gap-12">
@@ -97,7 +97,7 @@ export default function Home() {
         <SectionHeading
           eyebrow="What We Do"
           title="Premium Sealing Services"
-          description="From residential driveways to commercial parking lots — every surface protected with precision and care."
+          description="From residential driveways to commercial parking lots, every surface protected with precision and care."
         />
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
@@ -106,13 +106,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Split CTA — Dribbble two-column */}
+      {/* Split CTA */}
       <section className="border-y-2 border-gold/25 bg-surface surface-texture">
         <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 lg:grid-cols-2 lg:items-center lg:py-28">
           <SectionHeading
             eyebrow="Why Aurelian"
             title="Built to Withstand the Elements"
-            description="Our sealants are engineered for Ottawa's freeze-thaw cycles, road salt, UV exposure, and heavy traffic — so your investment lasts season after season."
+            description="Our sealants are engineered for Ottawa's freeze-thaw cycles, road salt, UV exposure, and heavy traffic, so your investment lasts season after season."
           />
           <div className="flex flex-col gap-6 lg:pl-8">
             <div className="card-gold-accent overflow-hidden rounded-2xl">
@@ -134,7 +134,7 @@ export default function Home() {
                 </p>
                 <p className="mt-4 text-sm leading-6 text-white/85">
                   Parking lots, plazas, industrial sites, condos, and luxury
-                  estates — all maintained to the same uncompromising standard.
+                  estates, all maintained to the same uncompromising standard.
                 </p>
               </div>
             </div>
@@ -149,7 +149,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Brand focal — logo + motto */}
+      {/* Brand focal */}
       <section className="relative overflow-hidden py-24">
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
           <div className="h-[500px] w-[500px] rounded-full border-2 border-gold/20" />
@@ -165,15 +165,15 @@ export default function Home() {
             className="gold-glow mb-8"
           />
           <p className="text-lg leading-8 text-white">
-            When your property deserves more than a quick coat — when you want
-            surfaces that look exceptional and perform even better —{" "}
+            When your property deserves more than a quick coat, when you want
+            surfaces that look exceptional and perform even better,{" "}
             <span className="font-semibold text-gold">{site.motto}</span>.
           </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-2 sm:flex-nowrap sm:gap-3">
             {site.badges.map((badge) => (
               <span
                 key={badge}
-                className="rounded-full border-2 border-gold bg-gold/15 px-5 py-2 text-xs font-semibold tracking-[0.15em] text-white uppercase"
+                className="whitespace-nowrap rounded-full border-2 border-gold bg-gold/15 px-4 py-2 text-[10px] font-semibold tracking-[0.12em] text-white uppercase sm:text-xs"
               >
                 {badge}
               </span>

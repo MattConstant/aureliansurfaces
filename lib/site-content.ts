@@ -6,10 +6,10 @@ export const site = {
   motto: "We Seal It Right",
   owner: "Maxime Gravel",
   phone: "613-298-5765",
-  email: "MGravel@aureliansurfaces.ca",
+  email: "info@aureliansurfaces.ca",
   website: "AurelianSurfaces.ca",
   location: "Ottawa & Surrounding Areas",
-  badges: ["Fully Insured", "Free Estimates", "Eco Friendly"],
+  badges: ["Free Estimates", "Winter Ready", "Premium Finish"],
 } as const;
 
 export const services = [
@@ -56,7 +56,7 @@ export const galleryItems = [
     title: "Luxury Estate",
     category: "Residential",
     description:
-      "Premium sealcoating on a luxury property — deep finish and lasting protection.",
+      "Premium sealcoating on a luxury property with a deep finish and lasting protection.",
     image: images.mansion,
     wide: true,
   },

@@ -8,6 +8,7 @@ type ProjectImageProps = {
   className?: string;
   aspectClass?: string;
   wide?: boolean;
+  unoptimized?: boolean;
 };
 
 export default function ProjectImage({
@@ -17,6 +18,7 @@ export default function ProjectImage({
   className = "",
   aspectClass = "aspect-[4/3]",
   wide = false,
+  unoptimized = false,
 }: ProjectImageProps) {
   return (
     <div className={`relative overflow-hidden ${aspectClass} ${className}`}>
@@ -25,8 +27,9 @@ export default function ProjectImage({
         alt={alt}
         fill
         priority={priority}
+        unoptimized={unoptimized}
         quality={imageQuality.default}
-        className="object-cover"
+        className="object-cover object-center"
         sizes={wide ? imageSizes.galleryWide : imageSizes.galleryCard}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />

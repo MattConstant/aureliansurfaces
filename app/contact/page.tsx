@@ -6,7 +6,7 @@ import { services, site } from "@/lib/site-content";
 export const metadata: Metadata = {
   title: "Contact | Aurelian Surfaces",
   description:
-    "Contact Aurelian Surfaces for premium sealcoating quotes in Ottawa. Free estimates. Fully insured.",
+    "Contact Aurelian Surfaces for premium sealcoating quotes in Ottawa. Free on-site estimates.",
 };
 
 const contactItems = [
@@ -34,7 +34,7 @@ const contactItems = [
 export default function Contact() {
   return (
     <>
-      {/* Centered brand header — business card layout */}
+      {/* Centered brand header */}
       <section className="surface-texture border-b-2 border-gold/25">
         <div className="mx-auto flex max-w-6xl flex-col items-center px-6 py-16 text-center lg:py-24">
           <Image
@@ -58,13 +58,13 @@ export default function Contact() {
             <span className="h-px flex-1 bg-gold" />
           </div>
           <p className="max-w-lg text-sm leading-7 text-white/90">
-            {site.owner}, Owner — serving residential and commercial clients
-            across {site.location}. Fully insured. Free estimates.
+            {site.owner}, Owner, serving residential and commercial clients
+            across {site.location}. Free on-site estimates, premium results.
           </p>
         </div>
       </section>
 
-      {/* Split form + contact — Dribbble layout */}
+      {/* Split form + contact */}
       <section className="mx-auto max-w-6xl px-6 py-16 lg:py-24">
         <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr]">
           <div>
@@ -97,7 +97,7 @@ export default function Contact() {
                 <textarea
                   name="message"
                   rows={5}
-                  placeholder="Describe your surface — driveway, parking lot, patio..."
+                  placeholder="Describe your surface: driveway, parking lot, patio..."
                   className="rounded-xl border-2 border-gold/30 bg-surface px-4 py-3 text-base font-normal tracking-normal text-white normal-case outline-none transition placeholder:text-white/40 focus:border-gold focus:ring-1 focus:ring-gold/50"
                 />
               </label>

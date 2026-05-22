@@ -22,7 +22,7 @@ export default function Gallery() {
           <SectionHeading
             eyebrow="Our Work"
             title="Project Gallery"
-            description="High-contrast finishes, wet-look asphalt, restored interlock, and protected concrete — the results speak for themselves."
+            description="High-contrast finishes, wet-look asphalt, restored interlock, and protected concrete. The results speak for themselves."
           />
         </div>
       </section>
@@ -34,10 +34,10 @@ export default function Gallery() {
             <div className="relative aspect-[4/3]">
               <Image
                 src={images.before}
-                alt="Driveway before sealcoating — weathered and faded surface"
+                alt="Driveway before sealcoating with alligator cracks and weathered asphalt"
                 fill
-                quality={imageQuality.default}
-                className="object-cover"
+                unoptimized
+                className="object-cover object-center"
                 sizes={imageSizes.galleryHalf}
               />
               <div className="absolute inset-0 bg-black/20" />
@@ -48,7 +48,7 @@ export default function Gallery() {
             <div className="relative aspect-[4/3]">
               <Image
                 src={images.cleanTwo}
-                alt="Driveway after sealcoating — deep protected finish"
+                alt="Driveway after sealcoating, deep protected finish"
                 fill
                 quality={imageQuality.default}
                 className="object-cover"
@@ -65,8 +65,8 @@ export default function Gallery() {
               <span className="text-gold">Surface</span> Transformation
             </h2>
             <p className="mt-2 max-w-2xl text-sm leading-6 text-white/85">
-              Faded, weathered pavement restored to a deep, protected finish —
-              the difference professional sealcoating makes.
+              Faded, weathered pavement restored to a deep, protected finish.
+              The difference professional sealcoating makes.
             </p>
           </div>
         </div>
@@ -91,6 +91,7 @@ export default function Gallery() {
                   }
                   priority={"wide" in item && item.wide}
                   wide={"wide" in item && item.wide}
+                  unoptimized={item.image === images.before}
                 />
                 <span className="absolute top-4 left-4 z-10 rounded-full border border-gold/50 bg-black/70 px-3 py-1 text-[10px] tracking-[0.2em] text-gold uppercase backdrop-blur-sm">
                   {item.category}
