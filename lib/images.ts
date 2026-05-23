@@ -1,5 +1,6 @@
 /** Public folder assets - paths match uploaded filenames */
 export const images = {
+  homeBackground: "/photo 11 .png",
   hero: "/slide1.png",
   mansion: "/mansion new .png",
   before: "/dirty imag 2.png?v=2",

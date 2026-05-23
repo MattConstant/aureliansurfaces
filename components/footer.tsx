@@ -1,13 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
+import PageContainer from "@/components/page-container";
 import { site } from "@/lib/site-content";
 
 const taglineWords = site.tagline.split(" • ");
 
 export default function Footer() {
+  const addressLine = `${site.address.street}, ${site.address.city}, ${site.address.province}`;
+
   return (
-    <footer className="relative mt-auto border-t-2 border-gold/30 bg-black section-gold">
-      <div className="relative mx-auto max-w-6xl px-6 py-16">
+    <footer className="relative mt-auto w-full border-t-2 border-gold/30 bg-black section-gold">
+      <PageContainer className="relative py-16">
         <div className="flex flex-col items-center text-center">
           <Image
             src="/logo.png"
@@ -28,22 +31,35 @@ export default function Footer() {
               </span>
             ))}
           </p>
-          <div className="my-6 flex w-full max-w-xs items-center gap-4">
+          <div className="my-6 flex w-full max-w-md items-center gap-4">
             <span className="h-px flex-1 bg-gold" />
-            <span className="text-xs font-semibold tracking-[0.3em] text-white uppercase">
+            <span className="text-xs font-semibold tracking-[0.2em] text-white uppercase">
               {site.motto}
             </span>
             <span className="h-px flex-1 bg-gold" />
           </div>
         </div>
 
-        <div className="mt-10 grid gap-8 sm:grid-cols-3">
+        <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {[
-            { label: "Phone", value: site.phone, href: `tel:${site.phone.replace(/[^\d]/g, "")}` },
-            { label: "Email", value: site.email, href: `mailto:${site.email}` },
-            { label: "Location", value: site.location },
+            {
+              label: "Phone",
+              value: site.phone,
+              href: `tel:${site.phone.replace(/[^\d]/g, "")}`,
+            },
+            {
+              label: "Operations",
+              value: site.operationsPhone,
+              href: `tel:${site.operationsPhone.replace(/[^\d]/g, "")}`,
+            },
+            {
+              label: "Email",
+              value: site.email,
+              href: `mailto:${site.email}`,
+            },
+            { label: "Service Area", value: site.location },
           ].map((item) => (
-            <div key={item.label} className="text-center sm:text-left sm:last:text-right">
+            <div key={item.label} className="text-center lg:text-left">
               <p className="text-xs font-semibold tracking-[0.25em] text-gold uppercase">
                 {item.label}
               </p>
@@ -61,11 +77,32 @@ export default function Footer() {
           ))}
         </div>
 
+        <p className="mt-8 text-center text-sm text-white/80">{addressLine}</p>
+
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-6 text-sm">
+          <a
+            href={site.social.instagram.href}
+            className="font-medium text-white transition hover:text-gold"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {site.social.instagram.handle}
+          </a>
+          <a
+            href={site.social.facebook.href}
+            className="font-medium text-white transition hover:text-gold"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {site.social.facebook.handle}
+          </a>
+        </div>
+
         <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-gold/20 pt-8 text-xs text-white/70 sm:flex-row">
-          <p className="text-white/90">
+          <p className="text-center text-white/90 sm:text-left">
             © {new Date().getFullYear()}{" "}
-            <span className="text-gold">{site.name}</span> Inc. · {site.owner},
-            Owner
+            <span className="text-gold">{site.legalName}</span> · {site.owner},{" "}
+            {site.ownerTitle} · {site.operationsManager}, {site.operationsTitle}
           </p>
           <nav className="flex gap-6">
             {[
@@ -83,7 +120,7 @@ export default function Footer() {
             ))}
           </nav>
         </div>
-      </div>
+      </PageContainer>
     </footer>
   );
 }

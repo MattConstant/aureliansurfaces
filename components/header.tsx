@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import PageContainer from "@/components/page-container";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -14,8 +15,8 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 border-b-2 border-gold/30 bg-black/95 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4">
+    <header className="sticky top-0 z-50 w-full border-b-2 border-gold/30 bg-black/95 backdrop-blur-md">
+      <PageContainer className="flex items-center justify-between gap-6 py-4">
         <Link href="/" className="flex items-center gap-3">
           <Image
             src="/logo.png"
@@ -62,7 +63,7 @@ export default function Header() {
             Get a Quote
           </Link>
         </nav>
-      </div>
+      </PageContainer>
     </header>
   );
 }

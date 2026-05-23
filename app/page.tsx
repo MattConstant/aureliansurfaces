@@ -1,24 +1,36 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import PageContainer from "@/components/page-container";
 import SectionHeading from "@/components/section-heading";
 import ServiceCard from "@/components/service-card";
 import { images } from "@/lib/images";
-import { imageQuality, imageSizes } from "@/lib/image-config";
-import { highlights, services, site } from "@/lib/site-content";
+import { featuredServices, highlights, site, siteDescription } from "@/lib/site-content";
 
 export const metadata: Metadata = {
   title: "Home | Aurelian Surfaces",
-  description:
-    "Premium asphalt, concrete, and interlock sealing in Ottawa. Protect • Enhance • Last.",
+  description: siteDescription,
 };
 
 export default function Home() {
   return (
     <>
-      {/* Hero split layout */}
-      <section className="surface-texture border-b-2 border-gold/25">
-        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 lg:grid-cols-2 lg:items-end lg:py-28">
+      <section className="relative min-h-screen w-full overflow-hidden border-b-2 border-gold/25">
+        <div className="absolute inset-0">
+          <Image
+            src={images.homeBackground}
+            alt=""
+            fill
+            priority
+            unoptimized
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/25 to-black/15" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/15 to-transparent" />
+        </div>
+
+        <PageContainer className="relative z-10 flex min-h-screen flex-col justify-center gap-12 py-24 lg:grid lg:grid-cols-2 lg:items-center lg:gap-16">
           <div>
             <p className="text-xs tracking-[0.35em] text-gold uppercase">
               Premium Surface Protection
@@ -33,10 +45,10 @@ export default function Home() {
           </div>
           <div className="flex flex-col gap-8 lg:pb-4">
             <p className="max-w-md text-base leading-7 text-white/90 sm:text-lg">
-              {site.name} delivers professional sealcoating and surface
-              protection for concrete, asphalt, and interlock across Ottawa and
-              surrounding areas. Built for Canadian weather. Finished to a
-              premium standard.
+              {site.legalName} delivers premium asphalt, concrete, and interlock
+              protection for luxury homes, commercial properties, and industrial
+              sites across {site.location}. Detail-oriented preparation, eco-friendly
+              products, and results built for harsh Canadian climates.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
@@ -53,29 +65,11 @@ export default function Home() {
               </Link>
             </div>
           </div>
-        </div>
-
-        {/* Full-width showcase */}
-        <div className="relative mx-auto max-w-6xl px-6 pb-20">
-          <div className="relative aspect-[3/1] w-full overflow-hidden rounded-2xl border-2 border-gold/40 bg-black gold-glow">
-            <Image
-              src={images.hero}
-              alt="Aurelian Surfaces: concrete sealing, interlock sealing, and oil stain treatment"
-              fill
-              priority
-              quality={imageQuality.hero}
-              unoptimized
-              className="object-contain object-center"
-              sizes={imageSizes.hero}
-            />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-          </div>
-        </div>
+        </PageContainer>
       </section>
 
-      {/* Highlights */}
-      <section className="section-gold">
-        <div className="mx-auto max-w-6xl px-6 py-16">
+      <section className="section-gold w-full">
+        <PageContainer className="py-16">
           <ul className="flex flex-col items-center justify-center gap-6 sm:flex-row sm:gap-12">
             {highlights.map((item) => (
               <li
@@ -89,54 +83,51 @@ export default function Home() {
               </li>
             ))}
           </ul>
-        </div>
+        </PageContainer>
       </section>
 
-      {/* Services grid */}
-      <section className="mx-auto max-w-6xl px-6 py-20 lg:py-28">
+      <section className="py-20 lg:py-28">
+        <PageContainer>
         <SectionHeading
           eyebrow="What We Do"
-          title="Premium Sealing Services"
-          description="From residential driveways to commercial parking lots, every surface protected with precision and care."
+          title="Surface Protection & Asphalt Services"
+          description="From residential driveways to commercial parking lots, we seal, repair, and maintain asphalt, concrete, and interlock with commercial-grade equipment and premium finishes."
         />
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => (
+          {featuredServices.map((service) => (
             <ServiceCard key={service.title} {...service} />
           ))}
         </div>
+        <p className="mt-10 text-center text-sm text-white/75">
+          Crack filling, pothole repair, line painting, polymeric sand, and full
+          commercial maintenance also available.{" "}
+          <Link href="/contact" className="font-medium text-gold hover:text-gold-light">
+            Contact us
+          </Link>{" "}
+          for a complete service list and free estimate.
+        </p>
+        </PageContainer>
       </section>
 
-      {/* Split CTA */}
-      <section className="border-y-2 border-gold/25 bg-surface surface-texture">
-        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 lg:grid-cols-2 lg:items-center lg:py-28">
+      <section className="section-band w-full bg-surface surface-texture">
+        <PageContainer className="grid gap-12 py-20 lg:grid-cols-2 lg:items-center lg:py-28">
           <SectionHeading
             eyebrow="Why Aurelian"
             title="Built to Withstand the Elements"
-            description="Our sealants are engineered for Ottawa's freeze-thaw cycles, road salt, UV exposure, and heavy traffic, so your investment lasts season after season."
+            description="Luxury branding meets commercial-grade equipment and detail-oriented preparation. Our eco-friendly products are engineered for Ottawa's freeze-thaw cycles, road salt, UV exposure, and heavy traffic."
+            className="max-w-none"
           />
           <div className="flex flex-col gap-6 lg:pl-8">
-            <div className="card-gold-accent overflow-hidden rounded-2xl">
-              <div className="relative aspect-[16/10]">
-                <Image
-                  src={images.cleanTwo}
-                  alt="Freshly sealed driveway with premium wet-look finish"
-                  fill
-                  quality={imageQuality.default}
-                  className="object-cover"
-                  sizes={imageSizes.half}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
-              </div>
-              <div className="p-8">
-                <p className="font-display text-2xl text-white">
-                  Commercial &{" "}
-                  <span className="text-gold">Residential</span> Experts
-                </p>
-                <p className="mt-4 text-sm leading-6 text-white/85">
-                  Parking lots, plazas, industrial sites, condos, and luxury
-                  estates, all maintained to the same uncompromising standard.
-                </p>
-              </div>
+            <div className="card-gold-accent rounded-2xl p-8">
+              <p className="font-display text-2xl text-white">
+                Commercial &{" "}
+                <span className="text-gold">Residential</span> Experts
+              </p>
+              <p className="mt-4 text-sm leading-6 text-white/85">
+                Homeowners, luxury estates, condo managers, retail plazas, and
+                industrial properties trust us for premium long-term surface
+                protection and curb appeal that lasts.
+              </p>
             </div>
             <Link
               href="/contact"
@@ -146,17 +137,17 @@ export default function Home() {
               <span aria-hidden>→</span>
             </Link>
           </div>
-        </div>
+        </PageContainer>
       </section>
 
-      {/* Brand focal */}
       <section className="relative overflow-hidden py-24">
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
           <div className="h-[500px] w-[500px] rounded-full border-2 border-gold/20" />
           <div className="absolute h-[700px] w-px rotate-45 bg-gradient-to-b from-transparent via-gold/10 to-transparent" />
           <div className="absolute h-[700px] w-px -rotate-45 bg-gradient-to-b from-transparent via-gold/10 to-transparent" />
         </div>
-        <div className="relative mx-auto flex max-w-3xl flex-col items-center px-6 text-center">
+        <PageContainer className="relative flex flex-col items-center text-center">
+          <div className="max-w-3xl">
           <Image
             src="/logo.png"
             alt="Aurelian Surfaces"
@@ -165,9 +156,10 @@ export default function Home() {
             className="gold-glow mb-8"
           />
           <p className="text-lg leading-8 text-white">
-            When your property deserves more than a quick coat, when you want
-            surfaces that look exceptional and perform even better,{" "}
-            <span className="font-semibold text-gold">{site.motto}</span>.
+            When your property deserves more than a quick coat, trust{" "}
+            {site.legalName} for surfaces that look exceptional and perform even
+            better.{" "}
+            <span className="font-semibold text-gold">{site.motto}</span>
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-2 sm:flex-nowrap sm:gap-3">
             {site.badges.map((badge) => (
@@ -179,7 +171,8 @@ export default function Home() {
               </span>
             ))}
           </div>
-        </div>
+          </div>
+        </PageContainer>
       </section>
     </>
   );

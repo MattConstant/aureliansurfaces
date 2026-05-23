@@ -3,6 +3,7 @@ type SectionHeadingProps = {
   title: string;
   description?: string;
   align?: "left" | "center";
+  className?: string;
 };
 
 export default function SectionHeading({
@@ -10,11 +11,13 @@ export default function SectionHeading({
   title,
   description,
   align = "left",
+  className = "",
 }: SectionHeadingProps) {
   const alignClass = align === "center" ? "text-center mx-auto" : "";
+  const widthClass = className ? "" : "max-w-2xl";
 
   return (
-    <div className={`max-w-2xl ${alignClass}`}>
+    <div className={`${widthClass} ${alignClass} ${className}`.trim()}>
       {eyebrow && (
         <p className="mb-3 text-xs font-medium tracking-[0.35em] text-gold uppercase">
           {eyebrow}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Geist, Geist_Mono } from "next/font/google";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import { siteDescription } from "@/lib/site-content";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -22,8 +23,7 @@ const cormorant = Cormorant_Garamond({
 
 export const metadata: Metadata = {
   title: "Aurelian Surfaces",
-  description:
-    "Premium asphalt, concrete, and interlock sealing in Ottawa. Protect • Enhance • Last.",
+  description: siteDescription,
   icons: {
     icon: [{ url: "/logo.png", type: "image/png" }],
     apple: "/logo.png",
@@ -42,7 +42,7 @@ export default function RootLayout({
     >
       <body className="flex min-h-full flex-col bg-background text-foreground">
         <Header />
-        <main className="flex flex-1 flex-col">{children}</main>
+        <main className="flex w-full flex-1 flex-col">{children}</main>
         <Footer />
       </body>
     </html>
