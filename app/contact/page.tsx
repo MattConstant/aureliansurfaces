@@ -1,11 +1,10 @@
 import Image from "next/image";
 import type { Metadata } from "next";
 import PageContainer from "@/components/page-container";
-import ContactForm from "@/components/contact-form";
-import FormSuccessBanner from "@/components/form-success-banner";
+import ContactForm from "@/app/contact/contact-form";
 import SectionHeading from "@/components/section-heading";
 import { contactCards } from "@/lib/contact-info";
-import { getSiteUrl, getWeb3FormsAccessKey } from "@/lib/env";
+import { getWeb3FormsAccessKey } from "@/lib/env";
 import { services, site, siteDescription } from "@/lib/site-content";
 
 export const metadata: Metadata = {
@@ -13,16 +12,8 @@ export const metadata: Metadata = {
   description: siteDescription,
 };
 
-export const dynamic = "force-dynamic";
-
-export default async function Contact({
-  searchParams,
-}: {
-  searchParams: Promise<{ submitted?: string }>;
-}) {
-  const { submitted } = await searchParams;
+export default async function Contact() {
   const accessKey = getWeb3FormsAccessKey();
-  const redirectUrl = `${getSiteUrl()}/contact?submitted=true`;
 
   return (
     <>
@@ -66,8 +57,7 @@ export default async function Contact({
                 title="Request a Free Estimate"
                 description="Tell us about your driveway, parking lot, patio, or commercial property. We respond with a detailed quote tailored to your project."
               />
-              <FormSuccessBanner show={submitted === "true"} />
-              <ContactForm accessKey={accessKey} redirectUrl={redirectUrl} />
+              <ContactForm accessKey={accessKey} />
             </div>
 
             <aside className="flex flex-col gap-6">

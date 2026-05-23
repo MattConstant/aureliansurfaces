@@ -7,11 +7,6 @@ export const contactCards = [
     href: `tel:${site.phone.replace(/[^\d]/g, "")}`,
   },
   {
-    label: "Operations",
-    value: site.operationsPhone,
-    href: `tel:${site.operationsPhone.replace(/[^\d]/g, "")}`,
-  },
-  {
     label: "Email",
     value: site.email,
     href: `mailto:${site.email}`,
@@ -23,11 +18,6 @@ export const contactCards = [
   {
     label: "Service Area",
     value: site.location,
-  },
-  {
-    label: "Website",
-    value: site.website,
-    href: `https://${site.website}`,
   },
   {
     label: "Instagram",
