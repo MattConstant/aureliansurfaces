@@ -5,6 +5,7 @@ import ContactForm from "@/components/contact-form";
 import FormSuccessBanner from "@/components/form-success-banner";
 import SectionHeading from "@/components/section-heading";
 import { contactCards } from "@/lib/contact-info";
+import { getSiteUrl, getWeb3FormsAccessKey } from "@/lib/env";
 import { services, site, siteDescription } from "@/lib/site-content";
 
 export const metadata: Metadata = {
@@ -12,16 +13,16 @@ export const metadata: Metadata = {
   description: siteDescription,
 };
 
+export const dynamic = "force-dynamic";
+
 export default async function Contact({
   searchParams,
 }: {
   searchParams: Promise<{ submitted?: string }>;
 }) {
   const { submitted } = await searchParams;
-  const accessKey = process.env.WEB3FORMS_ACCESS_KEY;
-  const siteUrl =
-    process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
-  const redirectUrl = `${siteUrl}/contact?submitted=true`;
+  const accessKey = getWeb3FormsAccessKey();
+  const redirectUrl = `${getSiteUrl()}/contact?submitted=true`;
 
   return (
     <>
@@ -66,15 +67,7 @@ export default async function Contact({
                 description="Tell us about your driveway, parking lot, patio, or commercial property. We respond with a detailed quote tailored to your project."
               />
               <FormSuccessBanner show={submitted === "true"} />
-              {accessKey ? (
-                <ContactForm accessKey={accessKey} redirectUrl={redirectUrl} />
-              ) : (
-                <p className="mt-10 rounded-xl border border-gold/30 bg-surface px-4 py-3 text-sm text-white/80">
-                  Form is not configured yet. Add{" "}
-                  <code className="text-gold">WEB3FORMS_ACCESS_KEY</code> to{" "}
-                  <code className="text-gold">.env.local</code>.
-                </p>
-              )}
+              <ContactForm accessKey={accessKey} redirectUrl={redirectUrl} />
             </div>
 
             <aside className="flex flex-col gap-6">

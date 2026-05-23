@@ -11,7 +11,7 @@ export const site = {
   operationsTitle: "Operations Manager",
   phone: "613-298-5765",
   operationsPhone: "613-298-5791",
-  email: "PGhazi@AurelianSurfaces.ca",
+  email: "info@aureliansurfaces.ca",
   website: "AurelianSurfaces.ca",
   address: {
     street: "123 Bourdeau Blvd",
