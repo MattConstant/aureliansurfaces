@@ -1,19 +1,20 @@
 type ServiceCardProps = {
-  title: string;
+  titleGold: string;
+  titleRest: string;
   description: string;
   features: readonly string[];
 };
 
 export default function ServiceCard({
-  title,
+  titleGold,
+  titleRest,
   description,
   features,
 }: ServiceCardProps) {
   return (
     <article className="card-gold-accent group flex flex-col rounded-2xl bg-surface p-6 transition hover:shadow-[0_0_50px_rgba(212,175,55,0.15)]">
       <h3 className="font-display text-xl tracking-wide text-white">
-        <span className="text-gold">{title.split(" ")[0]}</span>{" "}
-        {title.split(" ").slice(1).join(" ")}
+        <span className="text-gold">{titleGold}</span> {titleRest}
       </h3>
       <p className="mt-3 flex-1 text-sm leading-6 text-white/80">
         {description}

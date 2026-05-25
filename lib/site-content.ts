@@ -4,13 +4,13 @@ export const site = {
   name: "Aurelian Surfaces",
   legalName: "Aurelian Surfaces Inc.",
   tagline: "Protect • Enhance • Last",
-  motto: "Better for your property. Better for our planet.",
+  motto: "Protection that lasts. Products you can feel good about.",
+  closingMotto: "Protection that lasts. Products you can feel good about.",
   owner: "Maxime Gravel",
   ownerTitle: "Owner / Director",
   operationsManager: "Patrick Ghazi",
   operationsTitle: "Operations Manager",
   phone: "613-298-5765",
-  operationsPhone: "613-298-5791",
   email: "info@aureliansurfaces.ca",
   website: "AurelianSurfaces.ca",
   address: {
@@ -18,7 +18,7 @@ export const site = {
     city: "Limoges",
     province: "Ontario",
     country: "Canada",
-    postalCode: "K0A 2M0",
+    postalCode: "K0A2M0",
   },
   location: "Ottawa & Surrounding Areas",
   social: {
@@ -34,145 +34,144 @@ export const site = {
   badges: ["Free On-Site Estimates", "Eco-Friendly Products", "Premium Workmanship"],
 } as const;
 
-export const services = [
+export const homeIntro =
+  "Premium asphalt, concrete, and interlock protection for homes and commercial properties, across Ottawa & Surrounding Areas.";
+
+export const homeIntroSubline =
+  "Built for harsh Canadian climates using eco-friendly premium products and detail-oriented preparation.";
+
+export const heroTrustBadges = [
+  "Luxury-Level Workmanship",
+  "Fully Insured",
+  "Engineered for Canadian Weather",
+  "Eco-Friendly Commercial-Grade Products",
+] as const;
+
+export const homeFeaturedServices = [
   {
-    title: "Asphalt Sealing",
+    titleGold: "Asphalt Sealing &",
+    titleRest: "Crack Repair",
     description:
-      "Premium sealcoating that restores depth, protects against UV and water, and extends pavement life.",
-    features: ["UV Protection", "Water Resistant", "Long-Lasting"],
+      "Premium sealcoating that restores rich color, protects against UV and water damage, and extends pavement life.",
+    features: ["UV & Water Protection", "Rich Black Finish", "Prevents Cracking"],
   },
   {
-    title: "Crack Filling",
+    titleGold: "Concrete",
+    titleRest: "Sealing",
     description:
-      "Precision crack filling to stop water infiltration before freeze-thaw damage spreads through your pavement.",
-    features: ["Water Barrier", "Preventive Care", "Clean Finish"],
+      "Protective concrete sealing that resists salt, stains, and surface wear while enhancing the natural appearance of your concrete.",
+    features: [
+      "Salt & Weather Protection",
+      "Stain Resistant",
+      "Durable Surface Finish",
+    ],
   },
   {
-    title: "Hot Rubber Crack Repair",
+    titleGold: "Interlock",
+    titleRest: "Sealing",
     description:
-      "Commercial-grade hot rubber applied to cracks for a flexible, durable seal built for Ottawa winters.",
-    features: ["Hot Applied", "Flexible Seal", "Winter Ready"],
+      "Stabilizes joints, helps prevent weeds, and enhances the rich color of patios, walkways, and driveways.",
+    features: ["Joint Stability", "Weed Prevention", "Rich Color Enhancement"],
   },
   {
-    title: "Pothole Repair",
+    titleGold: "Cut, Removal",
+    titleRest: "& Pave",
     description:
-      "Professional patching to restore safety, smoothness, and curb appeal on damaged asphalt surfaces.",
-    features: ["Fast Turnaround", "Durable Patch", "Smooth Finish"],
+      "Professional asphalt repair involving saw-cut removal of failed pavement and fresh hot asphalt replacement.",
+    features: ["Precision Cut & Remove", "Hot Asphalt Repair", "Seamless Finish"],
   },
   {
-    title: "Patch & Pave",
+    titleGold: "Pave Ready",
+    titleRest: "Patches",
     description:
-      "Targeted asphalt repairs that restore structural integrity and a clean, uniform surface.",
-    features: ["Structural Repair", "Seamless Blend", "Lasting Results"],
+      "Professional tack-and-pave asphalt repairs designed for strong adhesion and a smooth, durable finish.",
+    features: ["Smooth Finish", "Durable Repair", "Hot Asphalt Repair"],
   },
   {
-    title: "Cut, Removal & Pave",
+    titleGold: "Commercial Surface",
+    titleRest: "Maintenance",
     description:
-      "Full patch-and-pave work including cut-out, removal of failed asphalt, and professional repaving.",
-    features: ["Cut & Remove", "Full Repave", "Commercial Grade"],
-  },
-  {
-    title: "Pave Ready Patches",
-    description:
-      "Tack-and-pave repairs for pave-ready areas, delivering a strong bond and a smooth finished surface.",
-    features: ["Tack & Pave", "Strong Bond", "Ready to Seal"],
-  },
-  {
-    title: "Parking Lot Maintenance",
-    description:
-      "Scheduled care for retail plazas, condos, and commercial lots to keep high-traffic surfaces performing.",
-    features: ["High Traffic Ready", "Scheduled Care", "Pro Results"],
-  },
-  {
-    title: "Parking Lot Line Painting",
-    description:
-      "Crisp, durable line painting that improves safety, organization, and the professional look of your lot.",
-    features: ["Crisp Lines", "Safety Focused", "Durable Paint"],
-  },
-  {
-    title: "Concrete Sealing",
-    description:
-      "Durable coatings that resist salt, stains, and wear while enhancing the natural look of your concrete.",
-    features: ["Salt Protection", "Stain Guard", "Enhanced Finish"],
-  },
-  {
-    title: "Garage Floor Sealing",
-    description:
-      "Protect garage floors from oil, salt, and moisture while improving appearance and long-term durability.",
-    features: ["Oil Resistant", "Moisture Guard", "Easy Maintenance"],
-  },
-  {
-    title: "Walkway & Patio Sealing",
-    description:
-      "Premium sealing for walkways and patios that boosts curb appeal and stands up to Canadian weather.",
-    features: ["Curb Appeal", "Weather Ready", "Slip Resistant Options"],
-  },
-  {
-    title: "Interlock Sealing",
-    description:
-      "Stabilizes joints, prevents weeds, and brings out rich color in patios, walkways, and driveways.",
-    features: ["Joint Stability", "Weed Prevention", "Color Enhancement"],
-  },
-  {
-    title: "Polymeric Sand Installation",
-    description:
-      "Professional polymeric sand application to lock pavers in place and resist erosion and weed growth.",
-    features: ["Joint Lock", "Weed Resistant", "Clean Finish"],
-  },
-  {
-    title: "Joint Sand Stabilization",
-    description:
-      "Stabilizes paver joints for long-lasting interlock performance and a refined, finished look.",
-    features: ["Stable Joints", "Erosion Control", "Premium Finish"],
-  },
-  {
-    title: "Commercial Surface Maintenance",
-    description:
-      "Parking lots, plazas, industrial sites, and luxury estates maintained to the same premium standard.",
-    features: ["Industrial Scale", "Detail Oriented", "Long-Term Value"],
+      "Professional maintenance solutions for parking lots, plazas, industrial properties, and luxury estates.",
+    features: [
+      "Detail-Oriented Work",
+      "Long-Lasting Results",
+      "Premium Property Care",
+      "Line Painting",
+    ],
   },
 ] as const;
 
-/** Priority services shown on the home page */
-export const featuredServices = services.filter((service) =>
-  [
-    "Asphalt Sealing",
-    "Concrete Sealing",
-    "Interlock Sealing",
-    "Cut, Removal & Pave",
-    "Pave Ready Patches",
-    "Commercial Surface Maintenance",
-  ].includes(service.title),
-);
+export const servicesSection = {
+  eyebrow: "Services",
+  title: "Premium Surface Protection and Repair Services",
+  description:
+    "From residential driveways to commercial parking lots, we seal, repair, and maintain asphalt, concrete, and interlock with commercial-grade equipment and Superior-Grade products.",
+  footnote:
+    "Hot rubber crack repair, pothole repair, and line painting also available. Free estimates available. Contact us for a free estimate.",
+} as const;
+
+export const whyAurelian = {
+  eyebrow: "Why Aurelian",
+  title: "Built to Withstand the Elements",
+  description:
+    "Professional application paired with industry-leading products, commercial-grade equipment, and meticulous surface preparation. Built to withstand Canada's freeze-thaw cycles, road salt, UV exposure, and heavy traffic.",
+  cardTitleGold: "Commercial & Residential",
+  cardTitleRest: "",
+  cardBody:
+    "Serving homeowners, luxury estates, condo properties, retail plazas, and commercial sites with premium long-term surface protection.",
+} as const;
+
+export const contactServiceGroups = [
+  {
+    category: "Asphalt",
+    items: ["Sealing", "Crack Repair", "Pothole Repair", "Patch & Pave Repairs"],
+  },
+  {
+    category: "Concrete",
+    items: ["Concrete & Garage Floor Sealing"],
+  },
+  {
+    category: "Interlock",
+    items: ["Interlock Sealing"],
+  },
+  {
+    category: "Commercial",
+    items: ["Parking Lot Maintenance", "Line Painting"],
+  },
+] as const;
+
+/** @deprecated Use homeFeaturedServices on the home page */
+export const services = homeFeaturedServices.map((s) => ({
+  title: `${s.titleGold} ${s.titleRest}`.trim(),
+  description: s.description,
+  features: s.features,
+}));
+
+export const featuredServices = homeFeaturedServices;
 
 export const galleryItems = [
   {
     title: "Luxury Estate",
     category: "Residential",
     description:
-      "Premium sealcoating on a luxury property with a deep finish and lasting protection.",
+      "Sealcoating on a luxury estate for enhanced curb appeal and long-lasting protection.",
     image: images.mansion,
     wide: true,
   },
   {
-    title: "Sealed Finish",
-    category: "Residential",
-    description: "Fresh sealant applied for a rich, wet-look protected surface.",
-    image: images.cleanTwo,
-  },
-  {
-    title: "Surface Restoration",
-    category: "Transformation",
-    description: "Weathered pavement restored to a deep, protected finish.",
-    image: images.before,
+    title: "Commercial Parking Lot",
+    category: "Commercial",
+    description:
+      "Freshly completed parking lot with professional line painting and premium sealcoating.",
+    image: images.commercialLot,
+    wide: true,
   },
 ] as const;
 
-export const highlights = [
-  "Luxury Brand, Pro Workmanship",
-  "Built for Harsh Canadian Climates",
-  "Eco-Friendly Premium Products",
-] as const;
+export const highlights = heroTrustBadges;
 
 export const siteDescription =
-  "Premium asphalt, concrete, and interlock sealing in Ottawa and surrounding areas. Residential and commercial surface protection built to last.";
+  "Premium asphalt, concrete, and interlock protection in Ottawa and surrounding areas. Residential and commercial surface protection built to last.";
+
+export const contactIntro =
+  "Serving residential and commercial clients across Ottawa & Surrounding Areas with premium long-lasting surface protection.";

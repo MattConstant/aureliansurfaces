@@ -1,19 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
 import PageContainer from "@/components/page-container";
+import SocialLinks from "@/components/social-links";
+import { images } from "@/lib/images";
 import { site } from "@/lib/site-content";
 
 const taglineWords = site.tagline.split(" • ");
 
 export default function Footer() {
-  const addressLine = `${site.address.street}, ${site.address.city}, ${site.address.province}`;
-
   return (
     <footer className="relative mt-auto w-full border-t-2 border-gold/30 bg-black section-gold">
       <PageContainer className="relative py-16">
         <div className="flex flex-col items-center text-center">
           <Image
-            src="/logo.png"
+            src={images.logo}
             alt="Aurelian Surfaces"
             width={80}
             height={80}
@@ -40,17 +40,12 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-8 sm:grid-cols-3">
           {[
             {
               label: "Phone",
               value: site.phone,
               href: `tel:${site.phone.replace(/[^\d]/g, "")}`,
-            },
-            {
-              label: "Operations",
-              value: site.operationsPhone,
-              href: `tel:${site.operationsPhone.replace(/[^\d]/g, "")}`,
             },
             {
               label: "Email",
@@ -77,32 +72,17 @@ export default function Footer() {
           ))}
         </div>
 
-        <p className="mt-8 text-center text-sm text-white/80">{addressLine}</p>
-
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-6 text-sm">
-          <a
-            href={site.social.instagram.href}
-            className="font-medium text-white transition hover:text-gold"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {site.social.instagram.handle}
-          </a>
-          <a
-            href={site.social.facebook.href}
-            className="font-medium text-white transition hover:text-gold"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {site.social.facebook.handle}
-          </a>
+        <div className="mt-8 flex flex-col items-center gap-3">
+          <p className="text-xs font-semibold tracking-[0.25em] text-gold uppercase">
+            Follow Us
+          </p>
+          <SocialLinks />
         </div>
 
         <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-gold/20 pt-8 text-xs text-white/70 sm:flex-row">
           <p className="text-center text-white/90 sm:text-left">
-            © {new Date().getFullYear()}{" "}
-            <span className="text-gold">{site.legalName}</span> · {site.owner},{" "}
-            {site.ownerTitle} · {site.operationsManager}, {site.operationsTitle}
+            © 2026 <span className="text-gold">{site.legalName}</span>. All
+            Rights Reserved.
           </p>
           <nav className="flex gap-6">
             {[

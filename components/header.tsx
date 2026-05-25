@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import PageContainer from "@/components/page-container";
+import { images } from "@/lib/images";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -19,7 +20,7 @@ export default function Header() {
       <PageContainer className="flex items-center justify-between gap-6 py-4">
         <Link href="/" className="flex items-center gap-3">
           <Image
-            src="/logo.png"
+            src={images.logo}
             alt="Aurelian Surfaces logo"
             width={44}
             height={44}

@@ -2,10 +2,13 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import PageContainer from "@/components/page-container";
 import ContactForm from "@/app/contact/contact-form";
+import ContactServicesList from "@/components/contact-services-list";
 import SectionHeading from "@/components/section-heading";
+import SocialLinks from "@/components/social-links";
 import { contactCards } from "@/lib/contact-info";
 import { getWeb3FormsAccessKey } from "@/lib/env";
-import { services, site, siteDescription } from "@/lib/site-content";
+import { images } from "@/lib/images";
+import { contactIntro, site, siteDescription } from "@/lib/site-content";
 
 export const metadata: Metadata = {
   title: "Contact | Aurelian Surfaces",
@@ -20,7 +23,7 @@ export default async function Contact() {
       <section className="section-band w-full surface-texture">
         <PageContainer className="flex flex-col items-center py-16 text-center lg:py-24">
           <Image
-            src="/logo.png"
+            src={images.logo}
             alt="Aurelian Surfaces"
             width={100}
             height={100}
@@ -40,10 +43,7 @@ export default async function Contact() {
             <span className="h-px flex-1 bg-gold" />
           </div>
           <p className="max-w-2xl text-sm leading-7 text-white/90">
-            {site.owner}, {site.ownerTitle} · {site.operationsManager},{" "}
-            {site.operationsTitle}. Serving residential and commercial clients
-            across {site.location}. Free on-site estimates and premium
-            long-lasting results.
+            {contactIntro}
           </p>
         </PageContainer>
       </section>
@@ -54,8 +54,8 @@ export default async function Contact() {
             <div>
               <SectionHeading
                 eyebrow="Get In Touch"
-                title="Request a Free Estimate"
-                description="Tell us about your driveway, parking lot, patio, or commercial property. We respond with a detailed quote tailored to your project."
+                title="Request a Quote"
+                description="Tell us about your driveway, parking lot, patio, or commercial property. We'll provide a detailed estimate tailored to your project and surface needs."
               />
               <ContactForm accessKey={accessKey} />
             </div>
@@ -82,21 +82,14 @@ export default async function Contact() {
                 </div>
               ))}
 
-              <div className="rounded-2xl border-2 border-gold bg-black/80 p-6 surface-texture">
+              <div className="card-gold-accent rounded-2xl bg-surface p-6">
                 <p className="text-xs tracking-[0.25em] text-gold uppercase">
-                  Services
+                  Follow Us
                 </p>
-                <ul className="mt-4 flex max-h-80 flex-col gap-1.5 overflow-y-auto pr-1">
-                  {services.map((s) => (
-                    <li
-                      key={s.title}
-                      className="text-sm font-medium text-white before:mr-2 before:text-gold before:content-['•']"
-                    >
-                      {s.title}
-                    </li>
-                  ))}
-                </ul>
+                <SocialLinks className="mt-4 justify-start" showLabels />
               </div>
+
+              <ContactServicesList />
             </aside>
           </div>
         </PageContainer>

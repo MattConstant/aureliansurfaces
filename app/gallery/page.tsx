@@ -1,18 +1,13 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import BeforeAfterCarousel from "@/components/before-after-carousel";
 import PageContainer from "@/components/page-container";
 import ProjectImage from "@/components/project-image";
 import SectionHeading from "@/components/section-heading";
-import { images } from "@/lib/images";
-import { galleryItems } from "@/lib/site-content";
-
-import { siteDescription } from "@/lib/site-content";
+import { galleryItems, siteDescription } from "@/lib/site-content";
 
 export const metadata: Metadata = {
   title: "Gallery | Aurelian Surfaces",
-  description:
-    `${siteDescription} Browse our portfolio of premium sealcoating and surface protection projects.`,
+  description: `${siteDescription} Browse our portfolio of premium sealcoating and surface protection projects.`,
 };
 
 export default function Gallery() {
@@ -23,30 +18,17 @@ export default function Gallery() {
           <SectionHeading
             eyebrow="Our Work"
             title="Project Gallery"
-            description="Premium workmanship for residential estates, commercial lots, and industrial properties across Ottawa. High-contrast finishes and lasting protection you can trust."
+            description="Premium workmanship for residential estates and commercial properties across Ottawa. Lasting protection you can trust."
           />
         </PageContainer>
-      </section>
-
-      <section className="py-12 lg:py-20">
-        <PageContainer>
-          <SectionHeading
-            eyebrow="Transformations"
-            title="Before & After"
-            description="Browse our latest projects. Each slide shows the same surface before and after professional sealcoating."
-          />
-        </PageContainer>
-        <div className="mx-auto mt-10 w-full max-w-7xl px-6 lg:mt-14 lg:max-w-[min(100%,82rem)] lg:px-8">
-          <BeforeAfterCarousel />
-        </div>
       </section>
 
       <section className="pb-20 lg:pb-28">
         <PageContainer>
           <SectionHeading
-            eyebrow="More Projects"
-            title="Featured Work"
-            description="Residential estates, sealed finishes, and surface restorations across Ottawa."
+            eyebrow="Featured Work"
+            title="Recent Projects"
+            description="After photos from residential and commercial surface protection projects."
             align="center"
           />
           <div className="mt-14 grid gap-6 sm:grid-cols-2">
@@ -66,7 +48,7 @@ export default function Gallery() {
                     }
                     priority={"wide" in item && item.wide}
                     wide={"wide" in item && item.wide}
-                    unoptimized={item.image === images.before}
+                    unoptimized
                   />
                   <span className="absolute top-4 left-4 z-10 rounded-full border border-gold/50 bg-black/70 px-3 py-1 text-[10px] tracking-[0.2em] text-gold uppercase backdrop-blur-sm">
                     {item.category}
@@ -88,7 +70,7 @@ export default function Gallery() {
           <div className="mt-16 rounded-2xl border-2 border-gold/40 bg-surface p-8 text-center section-gold sm:p-12">
             <p className="font-display text-2xl text-white sm:text-3xl">
               Ready to see your surfaces{" "}
-              <span className="text-gold">transformed</span>?
+              <span className="text-gold">protected</span>?
             </p>
             <p className="mx-auto mt-3 max-w-lg text-sm text-white/85">
               Contact us for a free estimate on your next project.
@@ -97,7 +79,7 @@ export default function Gallery() {
               href="/contact"
               className="mt-8 inline-block rounded-full bg-gold px-8 py-3 text-sm font-medium text-black transition hover:bg-gold-light"
             >
-              Get a Free Estimate
+              Request a Quote
             </Link>
           </div>
         </PageContainer>
