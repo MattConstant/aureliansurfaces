@@ -23,7 +23,7 @@ export default async function Contact() {
       <section className="section-band w-full surface-texture">
         <PageContainer className="flex flex-col items-center py-16 text-center lg:py-24">
           <Image
-            src={images.logo}
+            src={images.roadLogo}
             alt="Aurelian Surfaces"
             width={100}
             height={100}

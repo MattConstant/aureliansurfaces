@@ -1,6 +1,8 @@
 /** Public folder assets — paths match uploaded filenames */
 export const images = {
   logo: "/logo.png",
+  logoLarge: "/aurelian%20logo%20%231.png",
+  roadLogo: "/logo.png",
   instagram: "/ig.png",
   facebook: "/fb.png",
   homeBackground: "/photo 11 .png",

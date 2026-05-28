@@ -161,11 +161,11 @@ export default function Home() {
         <PageContainer className="relative flex flex-col items-center text-center">
           <div className="max-w-3xl">
             <Image
-              src={images.logo}
+              src={images.logoLarge}
               alt="Aurelian Surfaces"
               width={120}
               height={120}
-              className="gold-glow mb-8"
+              className="gold-glow mx-auto mb-8"
             />
             <p className="text-lg leading-8 text-white">
               When your property deserves more than a quick coat, trust{" "}

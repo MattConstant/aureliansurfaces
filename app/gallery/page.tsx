@@ -25,6 +25,7 @@ export default function Gallery() {
 
       <section className="pb-20 lg:pb-28">
         <PageContainer>
+          <br />
           <SectionHeading
             eyebrow="Featured Work"
             title="Recent Projects"
