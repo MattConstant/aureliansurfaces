@@ -24,8 +24,9 @@ export default function Header() {
             alt="Aurelian Surfaces logo"
             width={44}
             height={44}
+            unoptimized
             priority
-            className="gold-glow"
+            className=""
           />
           <div className="hidden leading-tight sm:block">
             <span className="font-display text-lg tracking-wide text-white">

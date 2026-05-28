@@ -15,9 +15,10 @@ export default function Footer() {
           <Image
             src={images.logoLarge}
             alt="Aurelian Surfaces"
-            width={240}
-            height={120}
-            className="gold-glow mb-6 h-auto w-[180px] object-contain sm:w-[220px]"
+            width={320}
+            height={320}
+            unoptimized
+            className="mb-6 h-auto w-[200px] object-contain sm:w-[240px]"
           />
           <p className="font-display text-3xl tracking-[0.15em] sm:text-4xl">
             {taglineWords.map((word, i) => (

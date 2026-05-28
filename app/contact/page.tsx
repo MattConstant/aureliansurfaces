@@ -25,9 +25,10 @@ export default async function Contact() {
           <Image
             src={images.roadLogo}
             alt="Aurelian Surfaces"
-            width={100}
-            height={100}
-            className="gold-glow mb-6"
+            width={120}
+            height={120}
+            unoptimized
+            className="mb-6"
           />
           <p className="text-xs tracking-[0.35em] text-gold uppercase">
             {site.legalName}

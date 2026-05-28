@@ -159,13 +159,15 @@ export default function Home() {
           <div className="absolute h-[700px] w-px -rotate-45 bg-gradient-to-b from-transparent via-gold/10 to-transparent" />
         </div>
         <PageContainer className="relative flex flex-col items-center text-center">
-          <div className="max-w-3xl">
+          <div className="flex w-full max-w-3xl flex-col items-center">
             <Image
               src={images.logoLarge}
               alt="Aurelian Surfaces"
-              width={120}
-              height={120}
-              className="gold-glow mx-auto mb-8"
+              width={320}
+              height={320}
+              unoptimized
+              priority
+              className="mb-8 block h-auto w-[260px] sm:w-[320px]"
             />
             <p className="text-lg leading-8 text-white">
               When your property deserves more than a quick coat, trust{" "}
