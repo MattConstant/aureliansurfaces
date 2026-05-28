@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { ReactNode } from "react";
 import { heroTrustBadges } from "@/lib/site-content";
 
 function WorkmanshipIcon() {
@@ -28,7 +29,7 @@ function BadgeIconImage({ src, alt }: { src: string; alt: string }) {
   );
 }
 
-const iconByLabel: Partial<Record<(typeof heroTrustBadges)[number], () => JSX.Element>> = {
+const iconByLabel: Partial<Record<(typeof heroTrustBadges)[number], () => ReactNode>> = {
   "Fully Insured": () => (
     <BadgeIconImage src="/Gold Shield.png" alt="Gold shield icon for fully insured" />
   ),
