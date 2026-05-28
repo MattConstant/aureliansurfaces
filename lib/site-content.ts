@@ -158,14 +158,6 @@ export const galleryItems = [
     image: images.mansion,
     wide: true,
   },
-  {
-    title: "Commercial Parking Lot",
-    category: "Commercial",
-    description:
-      "Freshly completed parking lot with professional line painting and premium sealcoating.",
-    image: images.commercialLot,
-    wide: true,
-  },
 ] as const;
 
 export const highlights = heroTrustBadges;
